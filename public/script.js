@@ -22,10 +22,14 @@ function captureImage() {
     const context = canvas.getContext('2d');
     context.drawImage(video, 0, 0, canvas.width, canvas.height);
     canvas.toBlob(blob => {
+        if (!blob) {
+            console.error('画像データが取得できませんでした（blobがnull）');
+            return;
+        }
+
         const formData = new FormData();
         formData.append('file', blob, 'image.png');
 
-        // ここでバックエンドに送るよう変更
         fetch('/api/sendImage', {
             method: 'POST',
             body: formData,
