@@ -27,6 +27,8 @@ function captureImage() {
             return;
         }
 
+        console.log('生成されたBlob:', blob);
+
         const formData = new FormData();
         formData.append('file', blob, 'image.png');
 
