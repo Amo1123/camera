@@ -15,13 +15,10 @@ export default async function handler(req, res) {
                 body: JSON.stringify({ content }),
             });
 
-            if (!discordRes.ok) {
-                throw new Error(`メッセージ送信失敗: ${discordRes.statusText}`);
-            }
+            if (!discordRes.ok) throw new Error('Discord送信失敗');
 
             res.status(200).json({ success: true });
         } catch (error) {
-            console.error('メッセージ送信エラー:', error);
             res.status(500).json({ error: error.message });
         }
     } else {
