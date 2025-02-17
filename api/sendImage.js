@@ -34,7 +34,7 @@ export default async function handler(req, res) {
 
             try {
                 const formData = new FormData();
-                formData.append('file', fs.createReadStream(filePath), 'image.png');
+                formData.append('files[0]', fs.createReadStream(filePath), 'image.png'); // ← ここ超大事
                 formData.append('payload_json', JSON.stringify({ content: '画像を送信します！' }));
 
                 const discordRes = await fetch(webhookUrl, {
