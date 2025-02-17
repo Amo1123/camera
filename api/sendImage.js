@@ -18,17 +18,20 @@ export default async function handler(req, res) {
     if (req.method === 'POST') {
         const form = new IncomingForm();
 
-        form.parse(req, async (err, fields, files) => {
-            if (err) {
-                console.error('ファイル解析エラー:', err);
-                return res.status(500).json({ error: 'ファイル解析エラー' });
-            }
+form.parse(req, async (err, fields, files) => {
+    if (err) {
+        console.error('ファイル解析エラー:', err);
+        return res.status(500).json({ error: 'ファイル解析エラー' });
+    }
 
-            const file = files.file?.[0];
-            if (!file) {
-                console.error('ファイルが見つからない:', files);
-                return res.status(400).json({ error: '画像ファイルが見つかりません' });
-            }
+    console.log('受け取ったfiles:', files);
+
+    const file = files.file?.[0];
+    if (!file) {
+        console.error('ファイルが見つからない:', files);
+        return res.status(400).json({ error: '画像ファイルが見つかりません' });
+    }
+
 
             const filePath = file.filepath;
 
