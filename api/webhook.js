@@ -1,3 +1,9 @@
 export default function handler(req, res) {
-    return res.status(403).json({ error: 'Access denied' }); // Webhook URL を漏洩させない
+    const webhookUrl = process.env.WEBHOOK_URL;
+
+    if (!webhookUrl) {
+        return res.status(500).json({ error: 'Webhook URL is not set.' });
+    }
+
+    res.status(200).json({ webhookUrl });
 }
