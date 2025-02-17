@@ -1,21 +1,21 @@
 export default async function handler(req, res) {
     const webhookUrl = process.env.WEBHOOK_URL;
 
-    if (!webhookUrl) {
-        return res.status(500).json({ error: 'Webhook URLが設定されていません' });
-    }
-
     if (req.method === 'POST') {
-        const { content } = req.body;
-
         try {
+            const { message, image } = req.body;
+
+            const payload = message
+                ? { content: message }
+                : { content: '画像をアップロードしました', files: [image] };
+
             const discordRes = await fetch(webhookUrl, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ content }),
+                body: JSON.stringify(payload),
             });
 
-            if (!discordRes.ok) throw new Error('Discord送信失敗');
+            if (!discordRes.ok) throw new Error('送信失敗');
 
             res.status(200).json({ success: true });
         } catch (error) {
