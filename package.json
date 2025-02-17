@@ -1,9 +1,9 @@
 {
   "name": "my-vercel-project",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "script.js",
   "dependencies": {
-    "form-data": "^4.0.2",
-    "formidable": "^3.5.2"
+    "formidable": "^3.5.0",
+    "form-data": "^4.0.0"
   }
 }
