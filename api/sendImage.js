@@ -16,14 +16,18 @@ export default async function handler(req, res) {
     }
 
     if (req.method === 'POST') {
-        const form = new IncomingForm();
+        const form = new IncomingForm({ uploadDir: '/tmp', keepExtensions: true });
 
         form.parse(req, async (err, fields, files) => {
             if (err) {
-                return res.status(500).json({ error: 'ファイル解析エラー' });
+                return res.status(500).json({ error: 'ファイル解析エラー', details: err.message });
             }
 
-            const filePath = files.file[0].filepath;
+            const filePath = files.file?.[0]?.filepath;
+
+            if (!filePath) {
+                return res.status(400).json({ error: 'ファイルがアップロードされていません' });
+            }
 
             try {
                 const formData = new FormData();
