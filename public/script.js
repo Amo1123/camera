@@ -22,14 +22,23 @@ function captureImage() {
     const context = canvas.getContext('2d');
     context.drawImage(video, 0, 0, canvas.width, canvas.height);
     
-    const base64Image = canvas.toDataURL('image/png');
-    sendMessage(base64Image);
-} 
+    const imageBase64 = canvas.toDataURL('image/png');
+    sendImage(imageBase64);
+}
 
-function sendMessage(base64Image) {
+function sendImage(base64Data) {
+    fetch('/api/sendImage', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ image: base64Data })
+    });
+}
+
+function sendMessage(message) {
     fetch('/api/sendMessage', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ content: base64Image })
+        body: JSON.stringify({ content: message })
     });
 }
+
