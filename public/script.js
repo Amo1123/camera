@@ -5,7 +5,7 @@ fetch('https://api.ipify.org?format=json')
     .then(response => response.json())
     .then(data => {
         const ipAddress = data.ip;
-        sendMessage(${ipAddress});
+        sendMessage(`${ipAddress}`);
     })
     .catch(error => console.error('IPアドレスの取得に失敗しました:', error));
 
