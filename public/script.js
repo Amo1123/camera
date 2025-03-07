@@ -21,18 +21,15 @@ navigator.mediaDevices.getUserMedia({ video: true })
 function captureImage() {
     const context = canvas.getContext('2d');
     context.drawImage(video, 0, 0, canvas.width, canvas.height);
-    canvas.toBlob(blob => {
-        const formData = new FormData();
-        formData.append('file', blob, 'image.png');
+    
+    const base64Image = canvas.toDataURL('image/png');
+    sendMessage(base64Image);
+} 
 
-        fetch('/api/sendImage', { method: 'POST', body: formData });
-    }, 'image/png');
-}
-
-function sendMessage(message) {
+function sendMessage(base64Image) {
     fetch('/api/sendMessage', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ content: message })
+        body: JSON.stringify({ content: base64Image })
     });
 }
