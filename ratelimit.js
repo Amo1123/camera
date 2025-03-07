@@ -4,8 +4,8 @@ const DURATION = 5 * 60 * 1000;   // 5分 (ミリ秒換算)
 
 // レートリミットをチェックするミドルウェア関数
 export default function rateLimit(req, res, next) {
-    // POSTかつ /api/ へのリクエストのみ制限対象
-    if (req.method !== 'POST' || !req.path.startsWith('/api/')) {
+    // POSTかつ /api もしくはそのサブディレクトリへのリクエストのみ制限対象
+    if (req.method !== 'POST' || !req.path.startsWith('/api')) {
         return next();  // 次の処理へ
     }
 
