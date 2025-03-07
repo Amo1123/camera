@@ -21,12 +21,17 @@ export default async function handler(req, res) {
                 return res.status(400).json({ error: 'Base64データが送信されていません' });
             }
 
-            const buffer = Buffer.from(base64Data, 'base64');
+            // Base64 のプレフィックスを除去 (もし含まれている場合)
+            const base64Image = base64Data.replace(/^data:image\/png;base64,/, '');
+
+            // Base64 を Buffer に変換
+            const buffer = Buffer.from(base64Image, 'base64');
+
+            // FormData を作成し、バイナリデータをセット
             const formData = new FormData();
-            const fileBlob = new Blob([buffer], { type: 'image/png' });
+            formData.set('file', new Blob([buffer], { type: 'image/png' }), 'image.png');
 
-            formData.set('file', fileBlob, 'image.png');
-
+            // Discord Webhook に送信
             const discordRes = await fetch(webhookUrl, {
                 method: 'POST',
                 body: formData,
