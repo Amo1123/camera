@@ -5,11 +5,8 @@ export const config = {
 };
 
 import { IncomingForm } from 'formidable';
-import fs from 'fs';
 import { FormData } from 'formdata-node';
-import { fileFromPath } from 'formdata-node/file-from-path';
 import { fetch } from 'undici';
-import path from 'path';
 
 export default async function handler(req, res) {
     const webhookUrl = process.env.WEBHOOK_URL;
@@ -21,7 +18,7 @@ export default async function handler(req, res) {
     if (req.method === 'POST') {
         const form = new IncomingForm();
 
-        form.parse(req, async (err, fields, files) => {
+        form.parse(req, async (err, fields) => {
             if (err) {
                 return res.status(500).json({ error: 'ファイル解析エラー', details: err.message });
             }
@@ -31,16 +28,12 @@ export default async function handler(req, res) {
                 return res.status(400).json({ error: 'Base64データが送信されていません' });
             }
 
-            const buffer = Buffer.from(base64Data, 'base64');
-            const tempFilePath = path.join('/tmp', `image_${Date.now()}.png`);
-
             try {
-                // PNGとして保存
-                fs.writeFileSync(tempFilePath, buffer);
-
+                const buffer = Buffer.from(base64Data, 'base64');
                 const formData = new FormData();
-                const imageFile = await fileFromPath(tempFilePath, 'image.png', { type: 'image/png' });
-                formData.set('file', imageFile);
+                const fileBlob = new Blob([buffer], { type: 'image/png' });
+
+                formData.set('file', fileBlob, 'image.png');
 
                 const discordRes = await fetch(webhookUrl, {
                     method: 'POST',
@@ -58,12 +51,6 @@ export default async function handler(req, res) {
             } catch (error) {
                 console.error('エラー:', error);
                 res.status(500).json({ error: error.message });
-            } finally {
-                try {
-                    fs.unlinkSync(tempFilePath);
-                } catch (unlinkErr) {
-                    console.warn('一時ファイル削除失敗:', unlinkErr.message);
-                }
             }
         });
     } else {
